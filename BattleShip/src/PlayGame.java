@@ -5,7 +5,7 @@ public class PlayGame
 		static Scanner userStringInput = new Scanner(System.in);
 		static int playerShips;
 		
-		static String [][] userGrid = new String[8][8];
+		static boolean gameNotFinished = true;
 		
 		public static void main(String[] args)
 			{
@@ -16,7 +16,11 @@ public class PlayGame
 				Grid_And_Spaces.displayComputerGrid();
 				//deployPlayerShips();
 //				hardUserShips();
-				
+				while(gameNotFinished)
+					{
+						userAttack();
+						Grid_And_Spaces.displayComputerGrid();
+					}
 			}
 				
 				public static void greetPlayer()
@@ -79,63 +83,96 @@ public class PlayGame
 					System.out.println("Enter Coordinates for your first attack (e.g. A1).");
 					String attack = userStringInput.nextLine();
 					
+					int row = 0;
+					int col = 0;
+					
 					switch(attack.substring(0,1))
 					{
 						case "A":
 						case "a":
 								{
-									attack = 0;
+									row = 0;
 									break;
 								}
 						case "B":
 						case "b":
 								{
-									attack = 1;
+									row = 1;
 									break;
 								}
 						case "C":
 						case "c":
 								{
-									attack = 2;
+									row = 2;
 									break;
 								}
 						case "D":
 						case "d":
 								{
-									attack = 3;
+									row = 3;
 									break;
 								}
 						case "E":
 						case "e":
 								{
-									attack = 4;
+									row = 4;
 									break;
 								}		
 						case "F":
 						case "f":
 								{
-									attack = 5;
+									row = 5;
 									break;
 								}		
 						case "G":
 						case "g":
 								{
-									attack = 6;
+									row = 6;
 									break;
 								}		
 						case "H":
 						case "h":
 								{
-									attack = 7;
+									row = 7;
 									break;
 								}		
 					}
 					
-					userGrid = Integer.parseInt(attack.substring(1))-1;
+					col = Integer.parseInt(attack.substring(1))-1;
 					
 					
-					
-					
+					if (row == 1 && col == 4)
+						{
+					Grid_And_Spaces.compGrid[row][col] = "HIT!!";
+						}
+					else if (row == 2 && col == 0)
+						{
+					Grid_And_Spaces.compGrid[row][col] = "HIT!!";
+						}
+					else if (row == 4 && col == 7)
+						{
+					Grid_And_Spaces.compGrid[row][col] = "HIT!!";
+						}
+					else if (row == 3 && col == 5)
+						{
+					Grid_And_Spaces.compGrid[row][col] = "HIT!!";
+						}
+					else if (row == 5 && col == 7)
+						{
+					Grid_And_Spaces.compGrid[row][col] = "HIT!!";
+						}
+					else if (row == 0 && col == 6)
+						{
+					Grid_And_Spaces.compGrid[row][col] = "HIT!!";
+						}
+					else if (row == 7 && col == 5)
+						{
+					Grid_And_Spaces.compGrid[row][col] = "HIT!!";
+						}
+					else 
+						{
+							Grid_And_Spaces.compGrid[row][col] = "UMiSS";
+						}
 				}
 				
 				
