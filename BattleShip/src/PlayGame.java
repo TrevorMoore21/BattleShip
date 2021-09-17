@@ -79,7 +79,59 @@ public class PlayGame
 					System.out.println("Enter Coordinates for your first attack (e.g. A1).");
 					String attack = userStringInput.nextLine();
 					
-					switch(attack.substring)
+					switch(attack.substring(0,1))
+					{
+						case "A":
+						case "a":
+								{
+									attack = 0;
+									break;
+								}
+						case "B":
+						case "b":
+								{
+									attack = 1;
+									break;
+								}
+						case "C":
+						case "c":
+								{
+									attack = 2;
+									break;
+								}
+						case "D":
+						case "d":
+								{
+									attack = 3;
+									break;
+								}
+						case "E":
+						case "e":
+								{
+									attack = 4;
+									break;
+								}		
+						case "F":
+						case "f":
+								{
+									attack = 5;
+									break;
+								}		
+						case "G":
+						case "g":
+								{
+									attack = 6;
+									break;
+								}		
+						case "H":
+						case "h":
+								{
+									attack = 7;
+									break;
+								}		
+					}
+					
+					userGrid = Integer.parseInt(attack.substring(1))-1;
 					
 					
 					
