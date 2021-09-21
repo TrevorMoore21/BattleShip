@@ -6,12 +6,7 @@ public class Grid_And_Spaces
 		static String [][] compGrid = new String[8][8];
 		
 		
-//		public static void main(String[] args)
-//			{
-//				fillWithSpaces();
-//				displayGrid();
-//				
-//			}
+
 		
 		public static void displayUserGrid()
 		{
